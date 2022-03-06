@@ -9,7 +9,7 @@ let   separator       = "-------------------------------------------------------
 
 function getDate(){
   let today = new Date();
-  var valueToReturn = prependZero(today.getDay(), 2) + "-" + months[today.getMonth()] + "-" + today.getFullYear() + " " + prependZero(today.getHours(), 2) + ":" + prependZero(today.getMinutes(), 2) + ":" + prependZero(today.getSeconds(), 2);
+  var valueToReturn = prependZero(today.getUTCDate(), 2) + "-" + months[today.getMonth()] + "-" + today.getFullYear() + " " + prependZero(today.getHours(), 2) + ":" + prependZero(today.getMinutes(), 2) + ":" + prependZero(today.getSeconds(), 2);
   return valueToReturn;
 }
 
