@@ -12,7 +12,7 @@ In order for these features to be available, the back-end was configured with fo
 
 ## Testing
 
-The following screenshots show the application in use. You can watch the video of me showcasing the application [here](/raw/master/GitHub-Screenshots/showcase.webm), or keep reading below to see the screenshots.
+The following screenshots show the application in use. You can watch the video of me showcasing the application [here](raw/master/GitHub-Screenshots/showcase.webm), or keep reading below to see the screenshots.
 
 ### Text sentiment analysis: Positive
 
