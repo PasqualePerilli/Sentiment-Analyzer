@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+
+.emotionTable {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  margin-top: 20px;
+}
+
+.emotionRow {
+  border-bottom-width: 2px;
+  border-bottom-color: lightgray;
+  border-bottom-style: groove;
+}
+
+.emotionHeader {
+  border-bottom-width: 3px;
+  border-bottom-color: darkgray;
+  border-bottom-style: solid;
+  background-color: #cce6ff;
+}
+
+.rightBorder {
+  border-right-width: 2px;
+  border-right-color: darkgray;
+  border-right-style: solid;
+}
+
+.even {
+  background-color: #f2f2f2;
+}
+
+.odd {
+  background-color: #e6f3ff;
+}
+
+.sentimentResult {
+  background-color: #c288c9;
+  width: 28%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+}
