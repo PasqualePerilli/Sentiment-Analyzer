@@ -12,7 +12,7 @@ In order for these features to be available, the back-end was configured with fo
 
 ## Testing
 
-The following screenshots show the application in use.
+The following screenshots show the application in use. You can download the video of me showcasing the application [here](https://github.com/PasqualePerilli/Sentiment-Analyzer/raw/master/GitHub-Screenshots/showcase.webm) (you can use [VLC media player](https://www.videolan.org) to open the downloaded file), or keep reading below to see the screenshots.
 
 ### Text sentiment analysis: Positive
 
