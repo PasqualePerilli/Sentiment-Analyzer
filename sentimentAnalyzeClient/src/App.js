@@ -73,7 +73,7 @@ class App extends React.Component {
   sendForSentimentAnalysis = () => {
     this.setState({sentiment:true});
     //let url = ".";
-    let url = "http://" + window.location.hostname + ":8080";
+    let url = "http://" + window.location.hostname + ( window.location.hostname === "localhost" ? ":8080" : "");
     let mode = this.state.mode;
     url = url + "/" + mode + "/sentiment?" + mode + "=" + encodeURIComponent(document.getElementById("textinput").value.trim());
     console.log('URL to send request is [' + url + ']');
@@ -100,7 +100,7 @@ class App extends React.Component {
 
     this.setState({sentiment:false});
     //let url = ".";
-    let url = "http://" + window.location.hostname + ":8080";
+    let url = "http://" + window.location.hostname + ( window.location.hostname === "localhost" ? ":8080" : "");
     let mode = this.state.mode;
     url = url + "/" + mode + "/emotion?"+ mode + "=" + encodeURIComponent(document.getElementById("textinput").value.trim());
 
