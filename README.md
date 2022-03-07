@@ -35,6 +35,12 @@ The result is written in yellow to further reinforce the message.
 
 ![Neutral text sentiment analysis](/GitHub-Screenshots/text-neutral.jpg)
 
+### Text sentiment analysis: Invalid
+
+If we were to write in the input box a text such as `this`, we would expect the analysis to fail and an error message to be displayed. Screenshot is available below.
+
+![Invalid Text sentiment analysis](/GitHub-Screenshots/invalid-text-sentiment.jpg)
+
 ### Text emotion analysis: Positive
 
 If we were to write in the input box a text such as `This is a very happy statement`, we would expect the joy emotion to be high. Screenshot is available below.
@@ -52,6 +58,12 @@ If we were to write in the input box a text such as `This is a very unhappy stat
 If we were to write in the input box a text such as `This is a very unhappy statement`, we would expect both the joy and sadness emotions to be middling. Screenshot is available below.
 
 ![Neutral text emotion analysis](/GitHub-Screenshots/text-neutral-table.jpg)
+
+### Text emotion analysis: Invalid
+
+If we were to write in the input box a text such as `that`, we would expect the analysis to fail and an error message to be displayed. Screenshot is available below.
+
+![Invalid Text emotion analysis](/GitHub-Screenshots/invalid-text-emotion.jpg)
 
 ### URL sentiment analysis: Positive
 
@@ -74,6 +86,12 @@ The result is written in yellow to further reinforce the message.
 
 ![Negative URL sentiment analysis](/GitHub-Screenshots/url-neutral.jpg)
 
+### URL sentiment analysis: Invalid
+
+If we were to write in the input box a text such as `invalid URL`, we would expect the analysis to fail and an error message to be displayed. Screenshot is available below.
+
+![Invalid URL sentiment analysis](/GitHub-Screenshots/invalid-url-sentiment.jpg)
+
 ### URL emotion analysis: Positive
 
 If we were to write in the input box a text such as `www.coursera.org`, we would expect the joy emotion to be high. Screenshot is available below.
@@ -91,4 +109,10 @@ If we were to write in the input box a text such as `https://www.statnews.com/20
 If we were to write in the input box a text such as `https://www.biography.com/political-figure/julius-caesar`, we would expect both the joy and sadness emotions to be middling. Screenshot is available below.
 
 ![Neutral URL emotion analysis](/GitHub-Screenshots/url-neutral-table.jpg)
+
+### URL emotion analysis: Invalid
+
+If we were to write in the input box a text such as `this is not a real URL`, we would expect the analysis to fail and an error message to be displayed. Screenshot is available below.
+
+![Invalid URL emotion analysis](/GitHub-Screenshots/invalid-url-emotion.jpg)
 
