@@ -1,6 +1,6 @@
 import './bootstrap.min.css';
 import './App.css';
-import EmotionTable from './EmotionTable.js';
+//import EmotionTable from './EmotionTable.js';
 import React from 'react';
 
 class App extends React.Component {
@@ -70,6 +70,18 @@ class App extends React.Component {
       });
   }
 
+  wasRequestSuccessful = (response) => {
+    var valueToReturn = false;
+    console.log("Reading response");
+    console.log(response);
+    console.log("Stringified JSON response:\n" + JSON.stringify(response, null, 4));
+    console.log("Response status is [" + response.status + "]");
+    if(response.status === 200){
+      valueToReturn = true;
+    }
+    return valueToReturn;
+  }
+
   sendForSentimentAnalysis = () => {
     this.setState({sentiment:true});
     //let url = ".";
@@ -78,9 +90,7 @@ class App extends React.Component {
     url = url + "/" + mode + "/sentiment?" + mode + "=" + encodeURIComponent(document.getElementById("textinput").value.trim());
     console.log('URL to send request is [' + url + ']');
     fetch(url).then( (response) => {
-        console.log("Reading response");
-        console.log(response);
-        console.log("Stringified JSON response:\n" + JSON.stringify(response, null, 4));
+        let successfulRequest = this.wasRequestSuccessful(response);
         response.json().then( (data) => {
           console.log("Setting state");
           this.setState({sentimentOutput:data.label});
@@ -91,9 +101,17 @@ class App extends React.Component {
             case "negative": color = "red"; break;
             default: color = "#fff907";
           }
-          output = <div style={{color:color, fontSize:20}} className="sentimentResult">Sentiment is {output}</div>;
+          if(successfulRequest === true){
+            output = <div style={{color:color, fontSize:20}} className="sentimentResult">Sentiment is {output}</div>;
+          }
+          else {
+            color   = "red";
+            output  = <div style={{color:color, fontSize:20}} className="sentimentResult">Sentiment could not be analyzed. Please verify your input text</div>;
+          }
           this.setState( {sentimentOutput:output} );
-      })});
+      })
+
+    });
   }
 
   sendForEmotionAnalysis = () => {
@@ -105,11 +123,19 @@ class App extends React.Component {
     url = url + "/" + mode + "/emotion?"+ mode + "=" + encodeURIComponent(document.getElementById("textinput").value.trim());
 
     fetch(url).then( (response) => {
+      let successfulRequest = this.wasRequestSuccessful(response);
       response.json().then( (data) => {
-        console.log("Printing emotion data here");
-        console.log( JSON.stringify(data, null, 4) );
-        let table = this.createEmotionTable(data);
-        this.setState( {sentimentOutput:table} );
+        if(successfulRequest === true){
+          console.log("Printing emotion data here");
+          console.log( JSON.stringify(data, null, 4) );
+          let table = this.createEmotionTable(data);
+          this.setState( {sentimentOutput:table} );
+        }
+        else {
+          var color   = "red";
+          var output  = <div style={{color:color, fontSize:20}} className="sentimentResult">Emotion could not be analyzed. Please verify your input text</div>;
+          this.setState( {sentimentOutput:output} );
+        }
       }
     )});
   }
@@ -131,7 +157,7 @@ class App extends React.Component {
             {this.state.sentimentOutput}
       </div>
     );
-    }
+  }
 }
 
 export default App;
